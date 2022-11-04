@@ -11,13 +11,28 @@
 <body>
     <h2>Login</h2>
 
-    <form>
-        <label for="fname">User name:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="lname">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Submit">
+    <form name="login" method="post">
+        <label for="user">User name:</label><br>
+        <input type="text" name="userName"><br>
+        <label for="pw">Password:</label><br>
+        <input type="password" name="password"><br><br>
+        <input type="button" onclick="check(this.form)" value="Login">
     </form>
 </body>
+<script language="javascript">
+    function check(form) {
+        let userName = form.userName.value;
+        let password = form.password.value;
+        if (userName == "admin" && password == "123456") {
+            location.href = 'admin.html';
+        } else if (userName == "teacher" && password == "123456") {
+            location.href = 'teacher.html';
+        } else if (userName == "student" && password == "123456") {
+            location.href = 'student.html';
+        } else {
+            alert("Error Username or password")
+        }
+    }
+</script>
 
 </html>
